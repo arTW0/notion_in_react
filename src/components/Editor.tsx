@@ -9,7 +9,9 @@ import {
   RxFontBold,
   RxFontItalic,
   RxStrikethrough,
-  RxCode
+  RxCode,
+  RxChevronDown,
+  RxChatBubble
 } from 'react-icons/rx'
 import 'highlight.js/styles/tokyo-night-dark.css'
 import { BubbleButton } from "./BubbleButtom";
@@ -42,24 +44,32 @@ export function Editor() {
     {editor && (
       <BubbleMenu
         className="bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide-zinc-600"
-        editor={editor}>
-        <BubbleButton
-          className="p-2 text-zinc-200 text-sm flex irems-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600">
-          <RxFontBold className="w-4 h-4" />
+        editor={editor}
+      >
+        <BubbleButton>
+          Text
+          <RxChevronDown className="w-4 h-4" />
         </BubbleButton>
-        <BubbleButton
-          className="p-2 text-zinc-200 text-sm flex irems-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600">
-          <RxFontItalic className="w-4 h-4" />
+        <BubbleButton>
+          Comment
+          <RxChatBubble className="w-4 h-4" />
         </BubbleButton>
-        <BubbleButton
-          className="p-2 text-zinc-200 text-sm flex irems-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600">
-          <RxStrikethrough className="w-4 h-4" />
-        </BubbleButton>
-        <BubbleButton
-          className="p-2 text-zinc-200 text-sm flex irems-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600">
-          <RxCode className="w-4 h-4" />
-        </BubbleButton>
-      </BubbleMenu>
-    )}
+        <div className="flex items-center">
+          <BubbleButton>
+            <RxFontBold className="w-4 h-4" />
+          </BubbleButton>
+          <BubbleButton>
+            <RxFontItalic className="w-4 h-4" />
+          </BubbleButton>
+          <BubbleButton>
+            <RxStrikethrough className="w-4 h-4" />
+          </BubbleButton>
+          <BubbleButton>
+            <RxCode className="w-4 h-4" />
+          </BubbleButton>
+        </div>
+      </BubbleMenu >
+    )
+    }
   </>
 }
